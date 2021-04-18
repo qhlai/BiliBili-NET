@@ -1,0 +1,51 @@
+﻿<UserControl
+    x:Class="BiliBili_UWP.Components.Account.SideSlimAccountPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BiliBili_UWP.Components.Account"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:widgets="using:BiliBili_UWP.Components.Widgets"
+    xmlns:ext="using:BiliBili_Controls.Extensions"
+    mc:Ignorable="d"
+    Loaded="UserControl_Loaded"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid x:Name="DetailContainer" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Center" Tapped="Account_Tapped">
+                <PersonPicture x:Name="UserAvatar" Style="{StaticResource BasicPersonPictureStyle}" Width="55"/>
+                <widgets:BiliImage Width="100" DecodePixelWidth="100" x:Name="PendantImage"/>
+            </Grid>
+            <StackPanel Grid.Row="1" Margin="0,0,0,0">
+                <TextBlock Text="--" x:Name="UserNameBlock" Style="{StaticResource CaptionTextStyle}" FontWeight="Bold"
+                           HorizontalAlignment="Center" TextAlignment="Center" MaxWidth="200"/>
+                <widgets:LevelBlock x:Name="LevelBlock" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+            </StackPanel>
+            <RelativePanel Width="200" HorizontalAlignment="Center" Grid.Row="2" Margin="0,15,0,0">
+                <StackPanel RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" ext:PressEffect.IsEnabled="True" Tapped="Dynamic_Tapped">
+                    <TextBlock Style="{StaticResource CaptionTextStyle}" Text="--" x:Name="DynamicBlock" HorizontalAlignment="Center"/>
+                    <TextBlock Style="{StaticResource SmallTipTextStyle}" Foreground="{ThemeResource NormalTextColor}" Text="动态" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" ext:PressEffect.IsEnabled="True" Tapped="Follow_Tapped">
+                    <TextBlock Style="{StaticResource CaptionTextStyle}" Text="--" x:Name="FollowBlock" HorizontalAlignment="Center"/>
+                    <TextBlock Style="{StaticResource SmallTipTextStyle}" Foreground="{ThemeResource NormalTextColor}" Text="关注" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" ext:PressEffect.IsEnabled="True" Tapped="Fans_Tapped">
+                    <TextBlock Style="{StaticResource CaptionTextStyle}" Text="--" x:Name="FanBlock" HorizontalAlignment="Center"/>
+                    <TextBlock Style="{StaticResource SmallTipTextStyle}" Foreground="{ThemeResource NormalTextColor}" Text="粉丝" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </RelativePanel>
+        </Grid>
+        <widgets:AsyncButton Style="{StaticResource SecondaryAsyncButtonStyle}" Icon="&#xE901;"
+                             Text="登录账户" x:Name="LoginButton" Click="LoginButton_Click" HorizontalAlignment="Stretch"/>
+        <PersonPicture x:Name="UserAvatarNarrrow" Style="{StaticResource BasicPersonPictureStyle}" Width="40" HorizontalAlignment="Center"
+                       Visibility="Collapsed" Tapped="UserAvatarNarrrow_Tapped"/>
+    </Grid>
+</UserControl>

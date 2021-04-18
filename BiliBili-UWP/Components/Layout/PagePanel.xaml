@@ -1,0 +1,71 @@
+﻿<UserControl
+    x:Class="BiliBili_UWP.Components.Layout.PagePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BiliBili_UWP.Components.Layout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:BiliBili_UWP.Components.Controls"
+    xmlns:controls1="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    SizeChanged="UserControl_SizeChanged"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <SplitView x:Name="PageSplitView" PaneClosing="PageSplitView_PaneClosing" PaneOpening="PageSplitView_PaneOpening"
+               PanePlacement="Right" CompactPaneLength="0" OpenPaneLength="400" IsPaneOpen="{x:Bind IsSubPageOpen,Mode=TwoWay}"
+               AllowFocusOnInteraction="True" PaneBackground="{ThemeResource PaneBackground}">
+        <SplitView.Pane>
+            <controls:SubPageControl x:Name="SubPageControl" CloseButtonClick="SubPageControl_CloseButtonClick"/>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid HorizontalAlignment="Stretch">
+                <Grid Padding="{x:Bind Padding,Mode=OneWay}" x:Name="Container" HorizontalAlignment="Stretch" Background="{ThemeResource PageBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource DefaultCircleButtonStyle}" Foreground="{ThemeResource NormalTextColor}" Content="&#xE933;"
+                x:Name="BackButton" Margin="0,0,20,0" Visibility="Collapsed" Click="BackButton_Click" VerticalAlignment="Center"/>
+                        <controls:AppSearchBox x:Name="BiliSearchBox" VerticalAlignment="Center" Grid.Column="1" MinWidth="300" MaxWidth="550" HorizontalAlignment="Left"
+                                               TabFocusNavigation="Once" TabNavigation="Once" TabIndex="99" Background="{ThemeResource PageOverBackground}"/>
+                        <Button Style="{StaticResource DefaultCircleButtonStyle}" x:Name="RefreshButton" Margin="20,0,0,0"
+                    Click="RefreshButton_Click" Grid.Column="2" VerticalAlignment="Center" Content="&#xE9CC;" TabIndex="1"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Height="10">
+                        <muxc:ProgressBar IsIndeterminate="True" x:Name="LoadingBar" Foreground="{ThemeResource PrimaryColor}"
+                     Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                    </Grid>
+                    <ScrollViewer Margin="0,10,0,0" x:Name="PageScrollViewer" Style="{StaticResource BasicScrollViewer}" Padding="0,0,30,0" Grid.Row="2"
+                                  ViewChanged="PageScrollViewer_ViewChanged" HorizontalScrollMode="Disabled" x:FieldModifier="Public">
+                        <Grid x:Name="DisplayContainer">
+                            <Frame x:Name="PageFrame" Navigated="PageFrame_Navigated" HorizontalAlignment="Stretch" 
+                                   VerticalAlignment="Stretch" x:FieldModifier="Public"
+                                   NavigationFailed="PageFrame_NavigationFailed"/>
+                        </Grid>
+                    </ScrollViewer>
+                    <Grid Grid.Row="2" Background="{ThemeResource PageBackground}" x:Name="HolderContainer"
+              HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <controls1:ImageEx Source="ms-appx:///Assets/bilibili logo.png" Width="100" DecodePixelWidth="100"
+                               HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+                <Button Style="{StaticResource DefaultCircleButtonStyle}" Opacity="0.5" Foreground="{ThemeResource ImportantTextColor}"
+                        x:Name="OpenPaneButton" Content="&#xE937;" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        Margin="0,0,20,20" Click="OpenPaneButton_Click"/>
+                <Grid x:Name="MaskGrid" Background="{ThemeResource ScreenMaskColor}" Visibility="Collapsed"/>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</UserControl>

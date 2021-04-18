@@ -1,0 +1,27 @@
+﻿## 声明
+
+本软件为BiliBili第三方客户端，不代表任何官方立场，仅用作学习交流使用，无法承担重度使用。
+
+软件保证在您使用软件的过程中，您的数据仅在您与BiliBili之间流通，开发者不会窃取任何数据。但即便如此，也请您妥善保管自己的账户数据，注意使用环境的安全。
+
+**软件已经下架**
+
+---
+
+由于收到官方警告，应用已经停止技术支持及维护，要是出现了影响使用的BUG，请放弃使用该软件
+
+---
+
+如果你播放视频比较卡，请在你的显卡设置中开启垂直同步
+
+## 开发人员
+
+[云之幻](https://github.com/Richasy)
+
+## 鸣谢(排名不分先后)
+
+- [蓝火火](https://github.com/cnbluefire)
+- [Dino Chen](https://github.com/DinoChan)
+- [NSDanmaku](https://github.com/xiaoyaocz/NSDanmaku)
+- [SYEngine](https://github.com/xqq/SYEngine)
+- [JustinXinLiu/Continuity](https://github.com/JustinXinLiu/Continuity)

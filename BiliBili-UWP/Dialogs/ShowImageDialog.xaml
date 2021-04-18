@@ -1,0 +1,29 @@
+﻿<ContentDialog
+    x:Class="BiliBili_UWP.Dialogs.ShowImageDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BiliBili_UWP.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Style="{StaticResource BasicDialogStyle}"
+    Title="图片"
+    PrimaryButtonText="另存为"
+    SecondaryButtonText="复制"
+    CloseButtonText="取消"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+
+    <FlipView ItemsSource="{x:Bind ImageCollection}" Width="400"
+                  SelectedValue="{x:Bind _source,Mode=TwoWay}" Background="{ThemeResource PageBackground}">
+        <FlipView.ItemTemplate>
+            <DataTemplate x:DataType="x:String">
+                <controls:ImageEx PlaceholderSource="ms-appx:///Assets/img_holder.png"
+                          x:Name="DisplayImage" Source="{x:Bind Converter={StaticResource CoverResolutionConverter},ConverterParameter=400}" IsCacheEnabled="True"/>
+            </DataTemplate>
+        </FlipView.ItemTemplate>
+    </FlipView>
+
+</ContentDialog>
