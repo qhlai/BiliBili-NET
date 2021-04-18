@@ -22,7 +22,7 @@
 2021.04.18 clone 原项目，更新库，调整错误api
 
 ## 原作者项目声明（一定要看）
-[原作者声明](https://github.com/qhlai/BiliBili-NET/oldREADME.md)
+[原作者声明](https://github.com/qhlai/BiliBili-NET/blob/master/oldREADME.md)
 
 ## 简介
 
