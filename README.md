@@ -10,7 +10,7 @@
 
 `BiLi`是一款设计精美的第三方UWP应用
 
-### 主体基于[BiliBili-UWP](https://github.com/Richasy/BiliBili-UWP)原作者停更后，继续维护
+### 主体基于[BiliBili-UWP](https://github.com/Richasy/BiliBili-UWP)原作者停更后，随缘维护，考试事情多
 
 
 </div>
