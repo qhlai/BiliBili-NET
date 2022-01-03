@@ -11,14 +11,15 @@
 `BiLi`是一款设计精美的第三方UWP应用
 
 ### 主体基于[BiliBili-UWP](https://github.com/Richasy/BiliBili-UWP)原作者停更后，随缘维护，考试事情多
+ 目前停止维护了，我重心放在rust和linux内核上了
 
 
 </div>
 
-## 新开发者项目声明
+## 项目声明
 
 > 本意学习gui，尝试开发一种自己用的舒服的桌面端，感觉这几种现有的[biliuwp-lite](https://github.com/xiaoyaocz/biliuwp-lite)和[BiliBili-UWP](https://github.com/Richasy/BiliBili-UWP)有点毛病，学着改改，搞个杂交版。
-> 最近挺忙的，手里项目太多了，期末考，更新随缘。
+> 停止维护
 > 
 ## 开发日志
 2021.04.18 clone 原项目，更新库，调整错误api
